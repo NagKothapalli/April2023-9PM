@@ -56,8 +56,20 @@ public class LoopingStatements
 			System.out.println("Apply Red color to odd step :" + i);
 		}
 	}
-	
-	
+	@Test
+	public void findStudent() //1 to 50   - 22
+	{
+		for(int i=1;i<=50;i++) //i = 1 2 3 4 5
+		{ //true
+			System.out.println("Searching roll num :" + i);
+			if(i==22) // 1==22 2==22 3==22 ......22==22
+			{ //true
+				System.out.println("Found the Student");
+				break;
+			}
+			
+		}
+	}
 	
 	
 	
