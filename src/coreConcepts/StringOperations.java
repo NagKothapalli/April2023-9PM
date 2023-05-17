@@ -50,10 +50,12 @@ public class StringOperations {
 	}
 	
 	//charAt
+	//StringIndexOutOfBoundsException
 	@Test
 	public void characterFunction()
 	{
 		String str = "    Selenium With Java           ";
+		//System.out.println(str.charAt(50));
 		System.out.println("Length of the string :"+str.length());
 		System.out.println("4th char :" + str.trim().charAt(3));
 		
