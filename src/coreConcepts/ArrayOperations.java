@@ -37,7 +37,7 @@ public class ArrayOperations
 		 String[] students = {"Ram","Ravi","Raj","Nag","Rajesh"};
 		 char[] stdGrades = {'A','C','E'};
 		 //boolean result = findStudent(empNumbers,89);
-		 boolean result = findStudent(students,"Nag");
+		 boolean result = findStudent(students,"Raj");
 		 if(result) {
 			 System.out.println("Found the Student");
 		 }
