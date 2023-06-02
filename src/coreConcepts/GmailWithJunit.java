@@ -56,11 +56,11 @@ public class GmailWithJunit
 		closeApplication();
 	}
 	//***************Reusable functions **********************
-	public void launchApplication()
+	private void launchApplication()
 	{
 		System.out.println("RC : Launch Application");//50 lines of code might be here 
 	}
-	public void loginToApplication()
+	protected void loginToApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
@@ -68,11 +68,11 @@ public class GmailWithJunit
 	{
 		System.out.println("RC : Logout From Application");//50 lines of code might be here 
 	}
-	public void closeApplication()
+	private void closeApplication()
 	{
 		System.out.println("RC : Close Application");
 	}	
-	public void compose()
+	void compose()
 	{
 		System.out.println("RC : Compose Mail");
 	}
@@ -80,15 +80,15 @@ public class GmailWithJunit
 	{
 		System.out.println("RC : Send Mail");
 	}	
-	public void open()
+	private void open()
 	{
 		System.out.println("RC : Open Mail");
 	}
-	public void reply()
+	void reply()
 	{
 		System.out.println("RC : Reply to Mail");
 	}
-	public void forward()
+	protected void forward()
 	{
 		System.out.println("RC : Forward Mail");
 	}

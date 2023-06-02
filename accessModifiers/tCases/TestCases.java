@@ -1,6 +1,8 @@
-package simpleInheritance;
+package tCases;
 
 import org.junit.Test;
+
+import rComponents.ReusableComponents;
 //             child              parent
 public class TestCases extends ReusableComponents
 {
@@ -53,4 +55,29 @@ public class TestCases extends ReusableComponents
 		logoutFromApplication();
 		closeApplication();
 	}
+	
+	public final static String collegeName = "JNTU";
+	public String stdName = "Ram";
 }
+
+class Yahoo
+{
+	public void modifiers()
+	{
+		System.out.println(TestCases.collegeName );
+		TestCases tc = new TestCases();
+	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

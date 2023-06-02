@@ -1,11 +1,11 @@
-package simpleInheritance;
+package rComponents;
 
 import org.junit.Test;
 
 public class ReusableComponents {
 
 	//***************Reusable functions **********************
-	void launchApplication()
+	public void launchApplication()
 	{
 		System.out.println("RC : Launch Application");//50 lines of code might be here 
 	}
@@ -17,11 +17,11 @@ public class ReusableComponents {
 	{
 		System.out.println("RC : Logout From Application");//50 lines of code might be here 
 	}
-	void closeApplication()
+	protected void closeApplication()
 	{
 		System.out.println("RC : Close Application");
 	}	
-	void compose()
+	protected void compose()
 	{
 		System.out.println("RC : Compose Mail");
 	}
@@ -33,7 +33,7 @@ public class ReusableComponents {
 	{
 		System.out.println("RC : Open Mail");
 	}
-	void reply()
+	public void reply()
 	{
 		System.out.println("RC : Reply to Mail");
 	}

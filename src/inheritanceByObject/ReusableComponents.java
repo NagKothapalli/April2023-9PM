@@ -1,15 +1,19 @@
-package simpleInheritance;
+package inheritanceByObject;
 
 import org.junit.Test;
 
 public class ReusableComponents {
 
+	public ReusableComponents()
+	{
+		System.out.println("Open Default Browser as Google Chrome");
+	}
 	//***************Reusable functions **********************
-	void launchApplication()
+	public  void launchApplication()
 	{
 		System.out.println("RC : Launch Application");//50 lines of code might be here 
 	}
-	protected void loginToApplication()
+	public void loginToApplication()
 	{
 		System.out.println("RC : Login To Application");
 	}
@@ -17,11 +21,11 @@ public class ReusableComponents {
 	{
 		System.out.println("RC : Logout From Application");//50 lines of code might be here 
 	}
-	void closeApplication()
+	public void closeApplication()
 	{
 		System.out.println("RC : Close Application");
 	}	
-	void compose()
+	public void compose()
 	{
 		System.out.println("RC : Compose Mail");
 	}
@@ -29,15 +33,15 @@ public class ReusableComponents {
 	{
 		System.out.println("RC : Send Mail");
 	}	
-	protected void open()
+	public void open()
 	{
 		System.out.println("RC : Open Mail");
 	}
-	void reply()
+	public void reply()
 	{
 		System.out.println("RC : Reply to Mail");
 	}
-	protected void forward()
+	public void forward()
 	{
 		System.out.println("RC : Forward Mail");
 	}
@@ -45,5 +49,6 @@ public class ReusableComponents {
 	{
 		System.out.println("RC : Delete Mail");
 	}
+	
 
 }
