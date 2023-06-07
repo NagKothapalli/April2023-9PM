@@ -31,6 +31,7 @@ public class GmailAutomation
 		}
 		Assert.assertEquals(expectedTitle, actualTitle);
 		driver.findElement(By.id("identifierId")).sendKeys("nag022");
+		driver.findElement(By.tagName("button")).click();
 	}
 	public void loginApplication()
 	{
