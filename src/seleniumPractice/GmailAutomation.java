@@ -1,5 +1,6 @@
 package seleniumPractice;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -8,21 +9,27 @@ import junit.framework.Assert;
 
 public class GmailAutomation
 {
+	ChromeDriver driver;
+	public GmailAutomation()
+	{
+		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe");
+		driver = new ChromeDriver();//it will open an empty google chrome browser //1234
+	}
 	String expectedTitle = "Gmail";
-	@Test
+	//ChromeDriver : get , getWindowHandle , getTitle , getCurrentUrl , findElement , findElements , 
+	//WebElement : click , clear , sendKeys , getText , getAttribute , isDisplayed , isEnabled
+	//By : ID , Name , class , cssSelector , linkText , PartialLinkText , tagName , xpath
+	@Before
 	public void launchGmailApplication()
 	{
-		System.out.println("Testcase : Launch Gmail Application");
-		System.setProperty("webdriver.chrome.driver", "D:\\Softwares\\JarFiles\\chromedriver-win32-90\\chromedriver.exe");
-		ChromeDriver driver = new ChromeDriver();//it will open an empty google chrome browser
-		driver.get("https://gmail.com"); // to call application url
+		System.out.println("Testcase : Launch Gmail Application");		
+		driver.get("https://gmail.com"); // to call application url //1234
 		String session = driver.getWindowHandle(); // to get the session id
 		System.out.println("My window session ID :" + session);
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
-		//Validation : Comparing the expected value with the actual value 
-		String actualTitle = driver.getTitle();
-		
+		//Validation | Assertion : Comparing the expected value with the actual value 
+		String actualTitle = driver.getTitle();		
 		if(expectedTitle.equals(actualTitle)) {
 			System.out.println("Launch Application is Successfull");
 		}
@@ -30,13 +37,14 @@ public class GmailAutomation
 			System.out.println("Launch Application is Failed");
 		}
 		Assert.assertEquals(expectedTitle, actualTitle);
-		driver.findElement(By.id("identifierId")).sendKeys("nag022");
-		driver.findElement(By.tagName("button")).click();
-	}
-	public void loginApplication()
-	{
 		
 	}
+	@Test
+	public void loginApplication()
+	{
+		driver.findElement(By.id("identifierId")).sendKeys("nag022"); //1234
+	}
+	
 	
 
 }
