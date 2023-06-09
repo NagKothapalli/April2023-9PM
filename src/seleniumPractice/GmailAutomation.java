@@ -39,10 +39,18 @@ public class GmailAutomation
 		Assert.assertEquals(expectedTitle, actualTitle);
 		
 	}
+	//Open Browser - > Launch Gmail -> Login
+	//Always Constructor will be executed first -> If any @Before Annotated method  -> @Test 
+	//org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Try again"}
 	@Test
-	public void loginApplication()
+	public void loginApplication() throws InterruptedException
 	{
 		driver.findElement(By.id("identifierId")).sendKeys("nag022"); //1234
+		driver.findElements(By.className("VfPpkd-vQzf8d")).get(1).click();
+		//driver.findElement(By.linkText("Try again")).click();
+		//driver.findElement(By.className("VfPpkd-Jh9lGc")).click();
+		Thread.sleep(2000);
+		//driver.findElements(By.tagName("a")).get(1).click();
 	}
 	
 	
