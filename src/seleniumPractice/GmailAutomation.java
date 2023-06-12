@@ -45,13 +45,72 @@ public class GmailAutomation
 	@Test
 	public void loginApplication() throws InterruptedException
 	{
-		driver.findElement(By.id("identifierId")).sendKeys("nag022"); //1234
+		//driver.findElement(By.id("identifierId")).sendKeys("nag022"); //1234
+		driver.findElement(By.name("identifier")).sendKeys("nag022");
 		driver.findElements(By.className("VfPpkd-vQzf8d")).get(1).click();
 		//driver.findElement(By.linkText("Try again")).click();
 		//driver.findElement(By.className("VfPpkd-Jh9lGc")).click();
 		Thread.sleep(2000);
 		//driver.findElements(By.tagName("a")).get(1).click();
 	}
+	//XPATH : 
+	  
+		//Fixed / Absolute / Static : /html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input
+		//Relative :
+		//Dynamic  :  
+	@Test
+	public void loginWithxpath()
+	{
+		driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input")).sendKeys("nag022");
+	}
+	@Test
+	public void forgotEmail()
+	{
+		//driver.findElement(By.tagName("button")).click();
+		driver.findElements(By.tagName("button")).get(0).click();
+	}
+	@Test
+	public void createAccount()
+	{
+		driver.findElements(By.className("VfPpkd-vQzf8d")).get(2).click();
+	}
+	@Test
+	public void learnMore()
+	{
+		//driver.findElement(By.linkText("Learn more")).click();
+		driver.findElement(By.partialLinkText("Learn")).click();
+	}
+	@Test
+	public void help()
+	{
+		driver.findElement(By.linkText("Help")).click();
+		driver.findElement(By.linkText("Privacy")).click();
+		driver.findElement(By.linkText("Terms")).click();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 
