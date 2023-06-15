@@ -46,8 +46,12 @@ public class GmailAutomation
 	public void loginApplication() throws InterruptedException
 	{
 		//driver.findElement(By.id("identifierId")).sendKeys("nag022"); //1234
-		driver.findElement(By.name("identifier")).sendKeys("nag022");
-		driver.findElements(By.className("VfPpkd-vQzf8d")).get(1).click();
+		//driver.findElement(By.name("identifier")).sendKeys("nag022");
+		//driver.findElement(By.xpath("//input[@name='identifier']")).sendKeys("nag022");
+		driver.findElement(By.xpath("//input[@id='identifierId' or @name='identifier']")).sendKeys("nag022");
+		//driver.findElements(By.className("VfPpkd-vQzf8d")).get(1).click();// Next button
+		//driver.findElement(By.xpath("//span[@class='VfPpkd-vQzf8d' and text()='Next']")).click();
+		driver.findElement(By.xpath("//*[@class='VfPpkd-vQzf8d' and text()='Next']")).click();
 		//driver.findElement(By.linkText("Try again")).click();
 		//driver.findElement(By.className("VfPpkd-Jh9lGc")).click();
 		Thread.sleep(2000);
@@ -56,7 +60,30 @@ public class GmailAutomation
 	//XPATH : 
 	  
 		//Fixed / Absolute / Static : /html/body/div[1]/div[1]/div[2]/div/c-wiz/div/div[2]/div/div[1]/div/form/span/section/div/div/div[1]/div/div[1]/div/div[1]/input
-		//Relative :
+		//Relative : //tagName[@attribute = 'value']
+	       			 //tagName[text()='value']
+					 //tagName[@attribute1='value' and @attribute2='value']
+					 //tagName[@attribute='value' and text()='value']
+	
+		//*[@attribute = 'value']
+		//*[text()='value']
+		//*[@attribute1='value' and @attribute2='value']
+		//*[@attribute='value' and text()='value']
+		
+		//tagName[contains(@attribute , 'value')]
+		//tagName[contains(text(),'value')]
+		//tagName[contains(@attribute1,'value') and @attribute2='value']
+		//tagName[@attribute='value' and contains(text(),'value')]
+	
+	   //tagName[@attribute1='value' or  @attribute2='value']
+	   //tagName[@attribute='value' or text()='value']
+	
+	   //*[@attribute1='value' or  @attribute2='value']
+	   //*[@attribute='value' or text()='value']
+	
+	   //tagName[@attribute1='value' or  contains(@attribute2,'value')]
+	   //tagName[@attribute='value' or contains(text(),'value')]
+		
 		//Dynamic  :  
 	@Test
 	public void loginWithxpath()
@@ -67,7 +94,9 @@ public class GmailAutomation
 	public void forgotEmail()
 	{
 		//driver.findElement(By.tagName("button")).click();
-		driver.findElements(By.tagName("button")).get(0).click();
+		//driver.findElements(By.tagName("button")).get(0).click();
+		//driver.findElement(By.xpath("//button[text()='Forgot email?']")).click();
+		driver.findElement(By.xpath("//button[contains(text(),'Forgot')]")).click();
 	}
 	@Test
 	public void createAccount()
